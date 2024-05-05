@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv436ku4kr4n4"]
+
+[ext_resource type="Texture2D" uid="uid://c3870sdrc4rgs" path="res://Altar/Altar of the Ancients.png" id="1_nubwx"]
+
+[sub_resource type="GDScript" id="GDScript_0lncm"]
+script/source = "extends Node2D
+
+
+func _ready():
+	print(get_node(\"/root\"))
+"
+
+[node name="Main Scene" type="Node2D"]
+script = SubResource("GDScript_0lncm")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+follow_viewport_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+editor_description = "Used Transform>Scale to fit to target 1920x1080 resolution."
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("1_nubwx")
+centered = false
